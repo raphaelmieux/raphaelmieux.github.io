@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Jornada da Análise de Dados em 6 Aulas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E6F7FF; /* Light blue from Brilliant Blues palette */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #007BFF, #003366); /* Brilliant Blues */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #A9D9F7; /* Lighter blue border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 4px rgba(0, 123, 255, 0.2); /* Blue shadow on hover */
+        }
+        .flow-arrow::after {
+            content: '→';
+            font-size: 2rem;
+            color: #007BFF; /* Primary Blue */
+            margin: 0 1rem;
+        }
+        .flow-item:last-child .flow-arrow::after {
+            content: '';
+        }
+        @media (max-width: 1023px) {
+            .flow-arrow::after {
+                content: '↓';
+                margin: 1rem 0;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="text-[#003366]">
+    <!-- Paleta de Cores Usada: Brilliant Blues Palette com acentos em Dourado (#FFD700) -->
+
+    <header class="text-center p-8 md:p-12 bg-white shadow-md">
+        <div class="flex flex-col items-center justify-center mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#003366]">Colégio Santa Maria</h2>
+            <p class="text-md md:text-lg text-[#007BFF]">3ª Série EM | Matemática | Prof. Raphael Miranda</p>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black gradient-text">Jornada da Análise de Dados</h1>
+        <p class="mt-4 text-lg md:text-xl text-[#007BFF]">Um Projeto de Estatística em 6 Aulas: Do Planejamento à Conclusão</p>
+        <div class="mt-6 p-3 bg-[#A9D9F7] rounded-lg inline-block shadow-sm">
+            <a href="https://docs.google.com/document/d/1rbOW_HQiQlDTBzyhxrYhuCbAAM9kaMYvukdT3JY1EYI/edit?usp=sharing" target="_blank" class="text-[#003366] font-semibold text-md hover:underline">
+                🔗 Acesse o Documento Detalhado do Projeto Aqui
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="processo" class="my-12">
+            <h2 class="text-3xl font-bold text-center mb-2">O Processo Estatístico Completo</h2>
+            <p class="text-center text-lg text-[#007BFF] max-w-3xl mx-auto mb-8">
+                Esta jornada de 600 minutos de aprendizagem prática guia os alunos através das 6 etapas fundamentais de uma pesquisa estatística, transformando curiosidade em conhecimento concreto.
+            </p>
+            <div class="flex flex-col lg:flex-row justify-center items-center flex-wrap">
+                <div class="flow-item text-center p-4">
+                    <div class="text-4xl font-bold text-[#007BFF]">1</div>
+                    <div class="font-semibold mt-2">Definir o Problema</div>
+                    <div class="flow-arrow"></div>
+                </div>
+                <div class="flow-item text-center p-4">
+                    <div class="text-4xl font-bold text-[#007BFF]">2</div>
+                    <div class="font-semibold mt-2">Planejar a Pesquisa</div>
+                    <div class="flow-arrow"></div>
+                </div>
+                <div class="flow-item text-center p-4">
+                    <div class="text-4xl font-bold text-[#007BFF]">3</div>
+                    <div class="font-semibold mt-2">Coletar Dados</div>
+                    <div class="flow-arrow"></div>
+                </div>
+                <div class="flow-item text-center p-4">
+                    <div class="text-4xl font-bold text-[#007BFF]">4</div>
+                    <div class="font-semibold mt-2">Organizar e Apresentar</div>
+                    <div class="flow-arrow"></div>
+                </div>
+                <div class="flow-item text-center p-4">
+                    <div class="text-4xl font-bold text-[#007BFF]">5</div>
+                    <div class="font-semibold mt-2">Analisar e Interpretar</div>
+                    <div class="flow-arrow"></div>
+                </div>
+                <div class="flow-item text-center p-4">
+                    <div class="text-4xl font-bold text-[#007BFF]">6</div>
+                    <div class="font-semibold mt-2">Divulgar Resultados</div>
+                    <div class="flow-arrow"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aulas" class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-8">As 6 Aulas da Jornada</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="card rounded-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#003366]">Aula 1: Planejamento</h3>
+                        <p class="mt-2 text-[#007BFF]">Definição do problema, população, amostra e construção do questionário no Google Forms com validação de dados.</p>
+                    </div>
+                    <button onclick="explainConcept('Planejamento da Pesquisa', 'Definição do problema, população, amostra e construção do questionário no Google Forms com validação de dados.')" class="mt-4 px-4 py-2 bg-[#FFD700] text-[#003366] font-semibold rounded-md hover:bg-[#FF6347] transition-colors shadow-md">✨ Explicar</button>
+                </div>
+
+                <div class="card rounded-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#003366]">Aula 2: Organização</h3>
+                        <p class="mt-2 text-[#007BFF]">Exportação dos dados, limpeza, tratamento e criação de tabelas de frequência detalhadas no Excel.</p>
+                    </div>
+                    <button onclick="explainConcept('Organização de Dados', 'Exportação dos dados, limpeza, tratamento e criação de tabelas de frequência detalhadas no Excel.')" class="mt-4 px-4 py-2 bg-[#FFD700] text-[#003366] font-semibold rounded-md hover:bg-[#FF6347] transition-colors shadow-md">✨ Explicar</button>
+                </div>
+
+                <div class="card rounded-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#003366]">Aula 3: Visualização</h3>
+                        <p class="mt-2 text-[#007BFF]">Criação de gráficos (Pizza, Barras, Histograma) para visualizar os padrões nos dados coletados.</p>
+                    </div>
+                    <button onclick="explainConcept('Visualização de Dados', 'Criação de gráficos (Pizza, Barras, Histograma) para visualizar os padrões nos dados coletados.')" class="mt-4 px-4 py-2 bg-[#FFD700] text-[#003366] font-semibold rounded-md hover:bg-[#FF6347] transition-colors shadow-md">✨ Explicar</button>
+                </div>
+
+                <div class="card rounded-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#003366]">Aula 4: Tendência Central</h3>
+                        <p class="mt-2 text-[#007BFF]">Cálculo e interpretação das medidas que representam o "centro" dos dados: Média, Mediana e Moda.</p>
+                    </div>
+                    <button onclick="explainConcept('Medidas de Tendência Central', 'Cálculo e interpretação das medidas que representam o centro dos dados: Média, Mediana e Moda.')" class="mt-4 px-4 py-2 bg-[#FFD700] text-[#003366] font-semibold rounded-md hover:bg-[#FF6347] transition-colors shadow-md">✨ Explicar</button>
+                </div>
+
+                <div class="card rounded-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#003366]">Aula 5: Dispersão</h3>
+                        <p class="mt-2 text-[#007BFF]">Análise da variabilidade dos dados com Amplitude, Variância e Desvio Padrão para entender o "espalhamento".</p>
+                    </div>
+                    <button onclick="explainConcept('Medidas de Dispersão', 'Análise da variabilidade dos dados com Amplitude, Variância e Desvio Padrão para entender o espalhamento.')" class="mt-4 px-4 py-2 bg-[#FFD700] text-[#003366] font-semibold rounded-md hover:bg-[#FF6347] transition-colors shadow-md">✨ Explicar</button>
+                </div>
+
+                <div class="card rounded-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#003366]">Aula 6: O Relatório Final</h3>
+                        <p class="mt-2 text-[#007BFF]">Consolidação de todas as análises em um relatório técnico individual no Microsoft Word, comunicando as conclusões.</p>
+                    </div>
+                    <button onclick="explainConcept('Relatório Estatístico Final', 'Consolidação de todas as análises em um relatório técnico individual no Microsoft Word, comunicando as conclusões.')" class="mt-4 px-4 py-2 bg-[#FFD700] text-[#003366] font-semibold rounded-md hover:bg-[#FF6347] transition-colors shadow-md">✨ Explicar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="visualizacoes" class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Visualizações em Foco</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="card rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Foco de Cada Aula</h3>
+                    <p class="text-center text-[#007BFF] mb-4">O projeto distribui o aprendizado de forma equilibrada, dedicando uma aula para cada etapa crucial da análise estatística.</p>
+                    <div class="chart-container relative h-80 md:h-96 w-full max-w-md mx-auto">
+                        <canvas id="focoAulaChart"></canvas>
+                    </div>
+                </div>
+                <div class="card rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Evolução das Habilidades</h3>
+                     <p class="text-center text-[#007BFF] mb-4">Ao longo das aulas, o foco muda da coleta e organização para a análise e comunicação dos resultados.</p>
+                    <div class="chart-container relative h-80 md:h-96 w-full max-w-lg mx-auto">
+                        <canvas id="habilidadesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ferramentas" class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Ferramentas do Analista</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="card rounded-lg p-6">
+                    <div class="text-5xl text-[#FFD700]">📋</div>
+                    <h3 class="text-xl font-bold mt-4">Google Forms</h3>
+                    <p class="mt-2 text-[#007BFF]">Para coleta de dados primários de forma estruturada, rápida e com validação.</p>
+                </div>
+                <div class="card rounded-lg p-6">
+                    <div class="text-5xl text-[#FFD700]">📊</div>
+                    <h3 class="text-xl font-bold mt-4">Microsoft Excel</h3>
+                    <p class="mt-2 text-[#007BFF]">Para organizar, limpar, calcular medidas e criar todas as visualizações gráficas.</p>
+                </div>
+                <div class="card rounded-lg p-6">
+                    <div class="text-5xl text-[#FFD700]">✍️</div>
+                    <h3 class="text-xl font-bold mt-4">Microsoft Word</h3>
+                    <p class="mt-2 text-[#007BFF]">Para a divulgação final dos resultados, redigindo um relatório técnico completo e profissional.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-8 bg-[#003366] text-white">
+        <p>Desenvolvendo a literacia de dados para o futuro.</p>
+    </footer>
+
+    <!-- Modal para explicações do LLM -->
+    <div id="llmModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full m-4">
+            <h3 id="modalTitle" class="text-2xl font-bold mb-4 text-[#003366]"></h3>
+            <p id="modalContent" class="text-[#007BFF] text-justify"></p>
+            <div id="modalLoading" class="hidden text-center mt-4">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-[#007BFF] mx-auto"></div>
+                <p class="text-[#007BFF] mt-2">Gerando explicação...</p>
+            </div>
+            <button onclick="document.getElementById('llmModal').classList.add('hidden')" class="mt-6 px-4 py-2 bg-[#007BFF] text-white rounded-md hover:bg-[#003366] transition-colors">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        // Configuração de tooltip para Chart.js
+        const tooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Função para quebrar rótulos longos em várias linhas
+        const wrapLabel = (label) => {
+            if (label.length > 16) {
+                const words = label.split(' ');
+                const lines = [];
+                words.forEach(word => {
+                    if ((currentLine + word).length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            }
+            return label;
+        };
+        
+        // Gráfico de Foco por Aula (Donut Chart)
+        const focoAulaCtx = document.getElementById('focoAulaChart').getContext('2d');
+        const focoAulaChart = new Chart(focoAulaCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Planejamento', 'Organização', 'Visualização', ['Tendência', 'Central'], 'Dispersão', 'Relatório'],
+                datasets: [{
+                    label: 'Foco da Aula',
+                    data: [1, 1, 1, 1, 1, 1],
+                    backgroundColor: [
+                        '#007BFF', // Primary Blue
+                        '#66CCFF', // Light Blue
+                        '#FFD700', // Gold/Yellow
+                        '#003366', // Dark Blue
+                        '#FF6347', // Tomato/Orange
+                        '#A9D9F7'  // A lighter blue
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...tooltipConfig,
+                plugins: {
+                    ...tooltipConfig.plugins,
+                    legend: {
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Evolução das Habilidades (Stacked Bar Chart)
+        const habilidadesCtx = document.getElementById('habilidadesChart').getContext('2d');
+        const habilidadesChart = new Chart(habilidadesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Aulas 1-2', 'Aulas 3-4', 'Aulas 5-6'],
+                datasets: [
+                {
+                    label: 'Coleta e Organização',
+                    data: [100, 50, 10],
+                    backgroundColor: '#66CCFF', // Light Blue
+                },
+                {
+                    label: 'Análise e Visualização',
+                    data: [10, 80, 60],
+                    backgroundColor: '#007BFF', // Primary Blue
+                },
+                {
+                    label: 'Comunicação e Relato',
+                    data: [0, 20, 100],
+                    backgroundColor: '#003366', // Dark Blue
+                }
+            ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true,
+                        ticks: {
+                            callback: function(value) { return value + "%" }
+                        }
+                    }
+                },
+                ...tooltipConfig,
+                plugins: {
+                    ...tooltipConfig.plugins,
+                    legend: {
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+
+        // Função para chamar a API Gemini e exibir a explicação
+        async function explainConcept(conceptTitle, conceptDescription) {
+            const modal = document.getElementById('llmModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+            const modalLoading = document.getElementById('modalLoading');
+
+            modalTitle.textContent = `Explicação: ${conceptTitle}`;
+            modalContent.textContent = ''; // Limpa o conteúdo anterior
+            modalLoading.classList.remove('hidden'); // Mostra o spinner de carregamento
+            modal.classList.remove('hidden'); // Mostra o modal
+
+            const prompt = `Explique o conceito de '${conceptTitle}' no contexto de uma pesquisa estatística escolar de forma clara e concisa, como se estivesse explicando para um aluno do ensino médio. Inclua a essência de '${conceptDescription}' na sua explicação.`;
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    modalContent.textContent = text;
+                } else {
+                    modalContent.textContent = "Não foi possível gerar a explicação. Tente novamente mais tarde.";
+                }
+            } catch (error) {
+                console.error("Erro ao chamar a API Gemini:", error);
+                modalContent.textContent = "Ocorreu um erro ao carregar a explicação. Verifique sua conexão ou tente novamente.";
+            } finally {
+                modalLoading.classList.add('hidden'); // Esconde o spinner de carregamento
+            }
+        }
+    </script>
+
+</body>
+</html>
